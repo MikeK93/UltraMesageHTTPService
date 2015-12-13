@@ -20,5 +20,8 @@ namespace UltraMessageHTTPSerice
 
         [OperationContract]
         bool SendMessage(string friendId, string message);
+
+        [OperationContract]
+        bool SendEmail(string email, string subject, string body);
     }
 }

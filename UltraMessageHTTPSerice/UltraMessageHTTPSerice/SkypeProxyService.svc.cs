@@ -13,6 +13,7 @@ namespace UltraMessageHTTPSerice
     public class SkypeProxyService : ISkypeProxyService
     {
         private SkypeProxy skypeClient = new SkypeProxy();
+        private EmailProxy emailClient = new EmailProxy();
 
         //public Dictionary<string, string> GetFriends()
         public string GetFriends()
@@ -23,6 +24,10 @@ namespace UltraMessageHTTPSerice
         public bool SendMessage(string friendId, string message)
         {
             return skypeClient.SendMessage(friendId, message);
+        }
+
+        public bool SendEmail(string email, string subject, string body) {
+            return emailClient.SendMessage(email, subject, body);
         }
     }
 }
